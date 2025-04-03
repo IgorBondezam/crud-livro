@@ -20,4 +20,20 @@ public class LivroMapperTest {
         assertEquals("NomeAutor", result.getAutor());
         assertEquals(StatusLivro.DISPONIVEL, result.getStatus());
     }
+
+    @Test
+    public void deveConverterLivroDTOParaLivro() {
+        LivroDTO livroDto = new LivroDTO();
+        livroDto.setId(1L);
+        livroDto.setNome("NomeLivro");
+        livroDto.setAutor("NomeAutor");
+        livroDto.setStatus(StatusLivro.DISPONIVEL);
+
+        Livro result = LivroMapper.toEntity(livroDto);
+
+        assertEquals(1L, result.getId());
+        assertEquals("NomeLivro", result.getNome());
+        assertEquals("NomeAutor", result.getAutor());
+        assertEquals(StatusLivro.DISPONIVEL, result.getStatus());
+    }
 }

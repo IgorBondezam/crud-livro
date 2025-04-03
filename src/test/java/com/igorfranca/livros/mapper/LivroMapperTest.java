@@ -34,6 +34,6 @@ public class LivroMapperTest {
         assertEquals(1L, result.getId());
         assertEquals("NomeLivro", result.getNome());
         assertEquals("NomeAutor", result.getAutor());
-        assertEquals(StatusLivro.DISPONIVEL, result.getStatus());
+        assertEquals(StatusLivro.EM_EMPRESTIMO, result.getStatus());
     }
 }
